@@ -1,4 +1,4 @@
-# MySQL Cheat Sheet
+# SQL Cheat Sheet
 ``` SQL
 LEFT JOIN
 ```
