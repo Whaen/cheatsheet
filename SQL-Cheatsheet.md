@@ -16,3 +16,7 @@ UNION
 IFF( <condition> , <expr1> , <expr2> )
 ```
 > Single-level if-then-else expression. Similar to CASE, but only allows a single condition.
+
+``` SQL
+listagg()
+```
