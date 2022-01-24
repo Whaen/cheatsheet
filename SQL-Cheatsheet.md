@@ -20,3 +20,6 @@ IFF( <condition> , <expr1> , <expr2> )
 ``` SQL
 listagg()
 ```
+``` SQL
+object_keys()
+```
