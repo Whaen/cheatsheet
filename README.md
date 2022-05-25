@@ -23,3 +23,6 @@ listagg()
 ``` SQL
 object_keys()
 ```
+``` SQL
+TRY_PARSE_JSON()
+```
