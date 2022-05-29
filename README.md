@@ -1,4 +1,4 @@
-# SQL Cheat Sheet
+# Snowflake SQL Cheat Sheet
 ``` SQL
 LEFT JOIN
 ```
@@ -19,10 +19,22 @@ IFF( <condition> , <expr1> , <expr2> )
 
 ``` SQL
 listagg()
+> | a | 
+> | b | -> | a, b, c |
+> | c |
 ```
 ``` SQL
 object_keys()
 ```
+>  extract keys from dictionary and parse them in array
 ``` SQL
 TRY_PARSE_JSON()
 ```
+> parse the string that contain string as json (try_xxx = if work execute else give null)
+
+``` SQL
+max()
+```
+> | a    | null | null |
+> | null |  b   | null | -> | a | b | c |
+> | null | null |  c   |
