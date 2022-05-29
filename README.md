@@ -19,8 +19,11 @@ IFF( <condition> , <expr1> , <expr2> )
 
 ``` SQL
 listagg()
+```
 > | a | 
+> 
 > | b | -> | a, b, c |
+> 
 > | c |
 ```
 ``` SQL
@@ -36,5 +39,7 @@ TRY_PARSE_JSON()
 max()
 ```
 > | a    | null | null |
+> 
 > | null |  b   | null | -> | a | b | c |
+> 
 > | null | null |  c   |
