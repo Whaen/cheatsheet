@@ -43,3 +43,14 @@ max()
 > | null |  b   | null | -> | a | b | c |
 > 
 > | null | null |  c   |
+
+```SQL
+SELECT 
+  *
+FROM ethereum.core.fact_event_logs
+WHERE block_timestamp > '2022-06-03 02:27:42.000'
+QUALIFY ROW_NUMBER() OVER (PARTITION BY origin_from_address ORDER BY block_timestamp) = 1
+LIMIT 100
+```
+> Anyone have a sample query where you look at the first transaction of a wallet after a specific tx/event?
+> for the value of block_timestamp you guys can just find out what's the timestamp for the tx that you want. you can change the = 1 to whatever number you want to include nth tx after event. change to < n to include all tx below n
