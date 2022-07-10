@@ -54,3 +54,8 @@ LIMIT 100
 ```
 > Anyone have a sample query where you look at the first transaction of a wallet after a specific tx/event?
 > for the value of block_timestamp you guys can just find out what's the timestamp for the tx that you want. you can change the = 1 to whatever number you want to include nth tx after event. change to < n to include all tx below n
+
+```SQL
+select * from table(flatten(input => parse_json('{"a":1, "b":[77,88]}'), path => 'b')) f;
+```
+https://docs.snowflake.com/en/sql-reference/functions/flatten.html
