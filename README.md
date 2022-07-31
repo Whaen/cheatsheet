@@ -57,5 +57,9 @@ LIMIT 100
 
 ```SQL
 select * from table(flatten(input => parse_json('{"a":1, "b":[77,88]}'), path => 'b')) f;
+select 
+		  		block_timestamp, tx_hash, origin_function_signature, voter, to_address, tx_fee, gas_price, gas_used,
+		      size, index, value, regexp_count(value, '0', 1) as zeros, len(value) as hex_size, this
+from table t, table(FLATTEN(input => t.segmented_data)) f order by tx_hash, index
 ```
 https://docs.snowflake.com/en/sql-reference/functions/flatten.html
