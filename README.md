@@ -63,3 +63,12 @@ select
 from table t, table(FLATTEN(input => t.segmented_data)) f order by tx_hash, index
 ```
 https://docs.snowflake.com/en/sql-reference/functions/flatten.html
+
+```SQL
+time_series as (
+  	select -1 + row_number() over(order by 0) as i, start_date + i as date 
+  	from (select '2022-07-07'::date start_date, current_date() end_date)
+      join table(generator(rowcount => 10000 )) x
+      qualify i < 1 + end_date - start_date
+  )
+```
